@@ -26,21 +26,20 @@ public class Aula01 {
         System.out.println("Soma: " + df.format((numero1 + numero2)));
 		System.out.println("Subtração: " + df.format((numero1 - numero2)));
 		System.out.println("Multiplicação: " + df.format((numero1 * numero2)));
+		
+		if (numero2 != 0) {
 		System.out.println("Divisão: " + df.format((numero1 / numero2)));
-		System.out.println("Potência: " + df.format(Math.pow(numero1, numero2)));
-		System.out.println("Raíz Quadrada: " + df.format(Math.sqrt(numero1)));
-        
-		System.out.println("Nome: " + nome);
-		
-		leia.close();
+		}else 
+			System.out.println("Não existe Divisão por zero");
+			System.out.println("Potência: " + df.format(Math.pow(numero1, numero2)));
+	    	System.out.println("Raíz Quadrada: " + df.format(Math.sqrt(numero1)));
+	    	leia.close();
+}
 				
-		System.out.println("Nome: " + nome);
+					
 		
-		
-		
-
 	}
 
-}
+
 
 
