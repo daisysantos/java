@@ -23,7 +23,8 @@ public class Exer02 {
 		
 		if (pergunta == "S")
 			sangue = true;
-		if (idade >= 60 && idade >= 69){
+		
+		if (idade >= 60 && idade <= 69){
 			if (sangue)
 			System.out.println(nome + " não está apto(a) a doar! ");
 		else

@@ -51,7 +51,7 @@ public class Exer01_String {
         	System.out.println("Suco de laranja.\nValor total:" + (f * quant));
             break;	
         default:
-        	System.out.println("Produto não encontrado");	
+        	System.out.println("Produto não encontrado!");	
         
         
         	
