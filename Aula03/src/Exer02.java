@@ -7,17 +7,17 @@ public class Exer02 {
 		Scanner leia = new Scanner (System.in);
 		
 		
-		int idade, sexo, categoria = 0,backend = 0,frontend = 0,mobile = 0,fullstack = 0,contador = 0;
+		int idade,sexo,categoria = 0,backend = 0,frontend = 0,mobile = 0,fullstack = 0,contador = 0;
 		char continua = 'S';
 		
 		while(continua =='S') {
 			System.out.println("Digite a sua idade: ");
 			idade = leia.nextInt();
 		
-		System.out.println("Digite o sexo (1-F/2-M/3-Outros): ");
+		System.out.println("Digite o seu sexo (1-F/2-M/3-Outros): ");
 		sexo = leia.nextInt();
 		
-		System.out.println("Digite a categoria (1–Backend/2–Frontend/3–Mobile/4–FullStack: ");
+		System.out.println("Digite a sua categoria (1–Backend/2–Frontend/3–Mobile/4–FullStack: ");
 		categoria = leia.nextInt();
 		
 		contador ++;
