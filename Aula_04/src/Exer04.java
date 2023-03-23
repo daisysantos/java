@@ -13,15 +13,15 @@ public class Exer04 {
 		double [] mediaAluno = new double [10];
 		
 		for (int iLinha = 0; iLinha < matrizInteiros.length; iLinha ++) {
-			for (int iColuna = 0; iColuna < matrizInteiros[iLinha].length; iColuna++) {
+			for (int iColuna = 0; iColuna < matrizInteiros[iLinha].length; iColuna ++) {
 						System.out.println("Digite um número ");
 						matrizInteiros[iLinha][iColuna] = leia.nextDouble();
 			}
 			
 		}	
 		
-		for (int iLinha = 0; iLinha < matrizInteiros.length; iLinha++) {
-			for (int iColuna = 0; iColuna < matrizInteiros[iLinha].length; iColuna++) {
+		for (int iLinha = 0; iLinha < matrizInteiros.length; iLinha ++) {
+			for (int iColuna = 0; iColuna < matrizInteiros[iLinha].length; iColuna ++) {
 				soma = soma + matrizInteiros[iLinha][iColuna];
 			}
 			media = soma / 4;
