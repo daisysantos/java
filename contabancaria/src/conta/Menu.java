@@ -1,6 +1,8 @@
 package conta;
 
 import java.util.Scanner;
+
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
@@ -13,9 +15,25 @@ public class Menu {
 		String titular;
 		float saldo, limite, valor;
 		
+		Conta c1 = new Conta(1, 123, 1, "Daisy Santos", 100000.00f);
+		
+		c1.visualizar();
+		
+		System.out.println("\nSaldo da conta: " + c1.getSaldo()+ "\n");
+		
+		c1.setTitular("Daisy Cristina Santos");
+		
+		c1.visualizar();
+		
+		c1.sacar(2000000.0f);
+		c1.visualizar();
+		
+		c1.depositar(2000.0f);
+		c1.visualizar();
+				
 		while (true) {
 			
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "***");
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "");
 			System.out.println("                                                     ");
 			System.out.println("                    Banco All                        ");
 			System.out.println("                                                     ");
@@ -208,4 +226,5 @@ public class Menu {
 		 leia.close();
 
 	}
+		
 			}}
