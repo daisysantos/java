@@ -10,7 +10,11 @@ public class TestarFuncionario {
 		Funcionario f2 = new Funcionario("Carolina Araujo", "Gerente", "1234", 4.000f, 26);
 		f2.visualizar();
 		
+		Gerente g2 = new Gerente ("Carolina Araujo" , "Gerente" , "1234" , 4.000f , 26, "Integral" , 3);
+		g2.visualizar();
 		
+		Vendedor v1 = new Vendedor ("Gabriel Machado", "Vendedor", "12345", 2.000f, 19, "Interno");
+		v1.visualizar();
 			
 		
 	}

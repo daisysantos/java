@@ -14,10 +14,13 @@ public class Exer_01 {
 		
 		
 		Cliente g2 = new Cliente ("Wellington Novais" , 26 , "001.456.789.11", data2 , 1.8);
-		
 		g2.visualizar();
 		
+		PessoaFisica p1 = new PessoaFisica ("Daisy Santos" , 25 , "123.456.789-00", data , 1.5, "PF");
+		p1.visualizar();
 		
+		PessoaJuridica pj1 = new PessoaJuridica ("Wellington Novais" , 26 , "001.456.789.11", data , 1.8, "PJ" , "MEI");
+		pj1.visualizar();	
 	}
 
 }

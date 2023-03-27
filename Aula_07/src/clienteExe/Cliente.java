@@ -83,7 +83,7 @@ public class Cliente {
 	System.out.println("* Data de nascimento:" + this.dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/YYYY")));
 	
 	System.out.println("* Altura:             " + this.altura       );
-	System.out.println("*******************************************");
+	
 
 	}
 }

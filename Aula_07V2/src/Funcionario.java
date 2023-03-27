@@ -55,7 +55,7 @@ public class Funcionario {
 			System.out.println("\nMatricula:             " + this.matricula);
 			System.out.println("\nSalário :                " + this.salario);
 			System.out.println("\nIdade :                    " + this.idade);
-			System.out.println("******************************************");
+			
 			
 	
 	}
