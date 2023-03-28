@@ -28,7 +28,8 @@ public class PessoaJuridica extends Cliente {
 	public void setPorte(String porte) {
 		this.porte = porte;
 	}
-
+	
+	@Override
 	public void visualizar() {
 		super.visualizar();
 		

@@ -20,7 +20,7 @@ public class PessoaFisica extends Cliente{
 		TipoLegal = tipoLegal;
 	}
 
-	
+	@Override
 	public void visualizar() {
 		super.visualizar();
 	
