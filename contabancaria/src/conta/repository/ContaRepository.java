@@ -1,5 +1,7 @@
 package conta.repository;
 
+import conta.model.Conta;
+
 public interface ContaRepository {
 
 	//CRUD de Conta
@@ -14,5 +16,6 @@ public interface ContaRepository {
 	public void sacar(int numero, float valor);
 	public void deposito(int numero, float valor);
 	public void transferir(int numeroOrigem, int numeroDestino, float valor);
+	
 	
 }

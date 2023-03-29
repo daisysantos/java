@@ -1,14 +1,15 @@
 package conta;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import conta.model.Conta;
+import conta.controller.ContaController;
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
-
 	public static void main(String[] args) {
 		
 		Scanner leia= new Scanner (System.in);
@@ -17,11 +18,7 @@ public class Menu {
 		String titular;
 		float saldo, limite, valor;
 		
-		ContaCorrente cc1= new ContaCorrente(2, 123, 1, "Cristina Santos" , 100000.00f, 1000.00f);
-		cc1.visualizar();	
-		
-		ContaPoupanca cp1= new ContaPoupanca(3, 123,2, "Teste",100000.00f, 30);
-		cp1.visualizar();
+		ContaController contas = new ContaController();
 		
 		while (true) {
 			
@@ -45,10 +42,17 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
 			
+			try {
 			opcao = leia.nextInt();
-		
+			} catch (InputMismatchException e) {
+				System.out.println("Digite valores inteiros!");
+				leia.nextLine();
+				opcao = 0;
+			}
+			
 			if (opcao == 9) {
 				System.out.println("\nBanco do Brazil - O seu Futuro começa aqui!");
+				
 				leia.close();
 				System.exit(0);
 			}
@@ -67,33 +71,39 @@ public class Menu {
 	            do {
                 System.out.println("Digite o Tipo da Conta (1-CC ou 2-CP): ");
                 tipo = leia.nextInt();
+                System.out.println("Digite o Saldo da Conta (R$): ");
+                saldo = leia.nextFloat();
                 
 	            } while (tipo < 1 && tipo > 2);
-
-	            System.out.println("Digite o Saldo da Conta (R$): ");
-	            saldo = leia.nextFloat();
 
 	            switch (tipo) {
 	            case 1 -> {
                 System.out.println("Digite o Limite de Crédito (R$): ");
                 limite = leia.nextFloat();
 
-                // criar o objeto conta corrente
+                contas.cadastrar(new ContaCorrente(contas.gerarNumero(), agencia, tipo, titular, saldo, limite));
+
 	            }
 	            case 2 -> {
                 System.out.println("Digite o dia do Aniversario da Conta: ");
                 aniversario = leia.nextInt();
 
-                // criar o objeto conta poupanca
+                contas.cadastrar(new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario));
+                
             }}}
             			
-			case 2 ->
+			case 2 ->{
 			System.out.println("Listar todas as Contas \n\n");
-			case 3 ->{
+			contas.listarTodas();
+			keyPress();
+			
+			}case 3 ->{
 			System.out.println("Consultar dados da Conta - por número\n\n");
 			
 			System.out.println("Digite o número da conta: ");
-            numero = leia.nextInt();}
+            numero = leia.nextInt();
+			contas.procurarPorNumero(numero);
+			keyPress();}
             
             case 4 ->{
 			System.out.println("Atualizar Dados da Conta \n\n");
@@ -214,9 +224,19 @@ public class Menu {
 			
 			}
 			
+		}
 		
-		 leia.close();
+			}
 
-	}
+	
+		public static void keyPress()  {
+			
+			try {
+				System.out.println(Cores.TEXT_RESET + "Pressione a tecla enter para continuar...");
+				System.in.read();
+			}catch (IOException e){
+				System.out.println("Erro de digitação!");
+			}
 		
-			}}
+		}
+	}
